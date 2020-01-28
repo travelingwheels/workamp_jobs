@@ -1,0 +1,2 @@
+class WorkampJobs::Scraper
+end
