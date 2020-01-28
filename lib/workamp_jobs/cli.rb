@@ -3,7 +3,6 @@ class WorkampJobs::Cli
   def call
     job_list
     menu
-    goodbye
   end
   
   def job_list
@@ -25,6 +24,8 @@ class WorkampJobs::Cli
         puts "More info on job 2 ..."
       when "list"
         job_list
+      when "exit"
+        goodbye
       else
         puts "Not a valid input please type list to see list of jobs or exit."
       end
