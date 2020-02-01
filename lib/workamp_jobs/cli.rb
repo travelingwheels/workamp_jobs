@@ -29,7 +29,7 @@ class WorkampJobs::Cli
       when "exit"
         goodbye
       else
-        puts "Not a valid input please type list to see list of jobs or exit."
+        puts "Sorry, that's not a valid input please type list to see list of jobs or exit."
       end
     end
   end
