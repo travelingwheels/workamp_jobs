@@ -2,15 +2,21 @@ class WorkampJobs::Cli
 
   def call
      puts "\nWelcome to Workamp jobs!\n"
+     get_jobs
     job_list
     menu
   end
   
+  def get_jobs
+    #binding.pry
+    @jobs = WorkampJobs::Jobs.all
+  end
+  
   def job_list
     puts "\nHere is today's list of workamp jobs.\n"
-    @jobs = ["Equestrian Trail guide.", "Cooks, Servers, and Hosts"]
+    #@jobs = ["Equestrian Trail guide.", "Cooks, Servers, and Hosts"]
     @jobs.each.with_index(1) do |job, idx|
-      puts "#{idx}. #{job}"
+      puts "#{idx}. #{job.title}"
     end
   end
 
