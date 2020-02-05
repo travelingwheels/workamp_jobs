@@ -4,10 +4,11 @@ class WorkampJobs::Jobs
   @@all = []
   
   def initialize(title, location, post_date)
-   # @title = title
-   # @location = location
-   # @post_date = post_date
+    @title = title
+    @location = location
+    @post_date = post_date
     save
+    #binding.pry
   end
   
   def self.all

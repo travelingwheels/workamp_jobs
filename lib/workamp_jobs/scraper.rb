@@ -7,7 +7,7 @@ class WorkampJobs::Scraper
     
     jobs.each do |job|
     
-    title = doc.css("div.text").css("div.top-meta h4 a").map(&:text)
+    title = doc.css("div.top-meta h4 a").map(&:text)
     location = doc.css("div.location").map(&:text)
     post_date = doc.css("section.job-post-row").css("div.wrap").map(&:text)
     
