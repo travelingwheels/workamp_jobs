@@ -8,7 +8,7 @@ class WorkampJobs::Jobs
     @location = location
     @post_date = post_date
     save
-    #binding.pry
+    binding.pry
   end
   
   def self.all
