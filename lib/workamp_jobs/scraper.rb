@@ -3,7 +3,7 @@ class WorkampJobs::Scraper
   def self.scrape_jobs
     doc = Nokogiri::HTML(open("https://www.coolworks.com/jobs-with-rv-spaces"))
     
-    jobs = doc.css("div.holder")
+    jobs = doc.css("article.job-post-wide .holder")
     
     jobs.each do |job|
     
