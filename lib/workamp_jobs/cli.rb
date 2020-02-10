@@ -1,10 +1,14 @@
 class WorkampJobs::Cli
 
   def call
-     puts "\nWelcome to Workamp jobs!\n"
+    puts "\nWelcome to Workamp jobs!\n"
+    @input = ""
+    until @input == "exit"
      get_jobs
      job_list
-     menu
+     #menu
+    end
+    goodbye
   end
   
   def get_jobs
@@ -18,14 +22,16 @@ class WorkampJobs::Cli
       puts "#{idx}. #{job.title}"
       #binding.pry
     end
+    puts "please choose a number to see more info."
+    more_info
   end
 
   def menu
     input = nil 
     while input != "exit"
     #binding.pry
-      puts "Choose a number to see more info about the job."
-      more_info
+      puts "\nChoose a number to see more info about the job.\n"
+      #more_info
       input = gets.strip.downcase
       case input
       when "list"
@@ -35,6 +41,7 @@ class WorkampJobs::Cli
       else
         puts "Sorry, that's not a valid input please type list to see list of jobs or exit."
       end
+      more_info
     end
   end
   
@@ -47,10 +54,13 @@ class WorkampJobs::Cli
   end
   
   def display_job_details(job)
-    #@jobs.each.with_index(1) do |job|
-    puts "location for job selected is #{job.location}."
-    puts "The job was posted on #{job.post_date}."
-    #end
+    puts "\nlocation for job selected is #{job.location}.\n"
+    puts "\nThe job was posted on #{job.post_date}.\n"
+  end
+  
+  def next_step
+    puts "To choose another posting type list or type exit"
+    @input = gets.strip.downcase
   end
   
   def goodbye
