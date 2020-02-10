@@ -25,13 +25,9 @@ class WorkampJobs::Cli
     while input != "exit"
     #binding.pry
       puts "Choose a number to see more info about the job."
+      more_info
       input = gets.strip.downcase
-      #if input.to_i.between?(1,WorkampJobs::Jobs.all.size)
       case input
-      #when "1"
-        #puts "More info on job 1 ..."
-      #when "2"
-        #puts "More info on job 2 ..."
       when "list"
         job_list
       when "exit"
@@ -40,6 +36,21 @@ class WorkampJobs::Cli
         puts "Sorry, that's not a valid input please type list to see list of jobs or exit."
       end
     end
+  end
+  
+  def more_info
+    input = gets.strip.to_i
+    if input.between?(1,WorkampJobs::Jobs.all.length)
+      job = WorkampJobs::Jobs.all[input - 1]
+      display_job_details(job)
+    end
+  end
+  
+  def display_job_details(job)
+    #@jobs.each.with_index(1) do |job|
+    puts "location for job selected is #{job.location}."
+    puts "The job was posted on #{job.post_date}."
+    #end
   end
   
   def goodbye
