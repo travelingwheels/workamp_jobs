@@ -6,6 +6,8 @@ class WorkampJobs::Cli
     until @input == "exit"
      get_jobs
      job_list
+     more_info
+     next_step
      #menu
     end
     goodbye
@@ -23,27 +25,27 @@ class WorkampJobs::Cli
       #binding.pry
     end
     puts "please choose a number to see more info."
-    more_info
+    #more_info
   end
 
-  def menu
-    input = nil 
-    while input != "exit"
-    #binding.pry
-      puts "\nChoose a number to see more info about the job.\n"
+  #def menu
+    #input = nil 
+    #while input != "exit"
+   # #binding.pry
+     # puts "\nChoose a number to see more info about the job.\n"
+      ##more_info
+      #input = gets.strip.downcase
+      #case input
+      #when "list"
+        #job_list
+      #when "exit"
+       # goodbye
+      #else
+        #puts "Sorry, that's not a valid input please type list to see list of jobs or exit."
+      #end
       #more_info
-      input = gets.strip.downcase
-      case input
-      when "list"
-        job_list
-      when "exit"
-        goodbye
-      else
-        puts "Sorry, that's not a valid input please type list to see list of jobs or exit."
-      end
-      more_info
-    end
-  end
+    #end
+  #end
   
   def more_info
     input = gets.strip.to_i
