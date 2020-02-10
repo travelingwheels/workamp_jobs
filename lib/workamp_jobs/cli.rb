@@ -51,13 +51,20 @@ class WorkampJobs::Cli
     input = gets.strip.to_i
     if input.between?(1,WorkampJobs::Jobs.all.length)
       job = WorkampJobs::Jobs.all[input - 1]
-      display_job_details(job)
+      display_job_details(job) if valid_input(input, @jobs)
     end
   end
   
+  def valid_input(input, data)
+    input.to_i <= data.length && input.to_i > 0 
+  end
+  
   def display_job_details(job)
+    puts "--------------------------------------------------"
+    puts "#{job.about}"
     puts "\nlocation for job selected is #{job.location}.\n"
     puts "\nThe job was posted on #{job.post_date}.\n"
+    puts "--------------------------------------------------"
   end
   
   def next_step

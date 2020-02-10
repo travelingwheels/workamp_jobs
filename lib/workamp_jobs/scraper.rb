@@ -10,8 +10,9 @@ class WorkampJobs::Scraper
     title = job.css("div.top-meta h4 a").text.strip
     location = job.css("div.location").text.strip
     post_date = job.css("span.time").text.strip
+    about = job.css("div.text").text.strip
     #binding.pry
-     WorkampJobs::Jobs.new(title, location, post_date)
+     WorkampJobs::Jobs.new(title, location, post_date, about)
     end
   end
 end
