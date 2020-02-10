@@ -8,7 +8,6 @@ class WorkampJobs::Cli
      job_list
      more_info
      next_step
-     #menu
     end
     goodbye
   end
@@ -27,25 +26,6 @@ class WorkampJobs::Cli
     puts "please choose a number to see more info."
     #more_info
   end
-
-  #def menu
-    #input = nil 
-    #while input != "exit"
-   # #binding.pry
-     # puts "\nChoose a number to see more info about the job.\n"
-      ##more_info
-      #input = gets.strip.downcase
-      #case input
-      #when "list"
-        #job_list
-      #when "exit"
-       # goodbye
-      #else
-        #puts "Sorry, that's not a valid input please type list to see list of jobs or exit."
-      #end
-      #more_info
-    #end
-  #end
   
   def more_info
     input = gets.strip.to_i
@@ -61,6 +41,7 @@ class WorkampJobs::Cli
   
   def display_job_details(job)
     puts "--------------------------------------------------"
+    puts "#{job.title}"
     puts "#{job.about}"
     puts "\nlocation for job selected is #{job.location}.\n"
     puts "\nThe job was posted on #{job.post_date}.\n"
@@ -68,7 +49,7 @@ class WorkampJobs::Cli
   end
   
   def next_step
-    puts "To choose another posting type list or type exit"
+    puts "Hit any key to see the list again or type 'exit' to exit."
     @input = gets.strip.downcase
   end
   
