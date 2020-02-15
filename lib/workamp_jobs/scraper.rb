@@ -6,11 +6,12 @@ class WorkampJobs::Scraper
     jobs = doc.css("article.job-post-wide .holder")
     
     jobs.each do |job|
-    
+    #binding.pry
     title = job.css("div.top-meta h4 a").text.strip
     location = job.css("div.location").text.strip
     post_date = job.css("span.time").text.strip
     about = job.css("div.text").text.strip
+    #url = job.css("section.job-post-row div.container div.holder div.top-meta h4 a").attr("href").value
     #binding.pry
      WorkampJobs::Jobs.new(title, location, post_date, about)
     end

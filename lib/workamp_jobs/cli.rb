@@ -40,16 +40,16 @@ class WorkampJobs::Cli
   end
   
   def display_job_details(job)
-    puts "--------------------------------------------------"
+    puts "----------------------------------------------------------------------"
     puts "#{job.title}"
     puts "#{job.about}"
     puts "\nlocation for job selected is #{job.location}.\n"
     puts "\nThe job was posted on #{job.post_date}.\n"
-    puts "--------------------------------------------------"
+    puts "----------------------------------------------------------------------"
   end
   
   def next_step
-    puts "Hit any key to see the list again or type 'exit' to exit."
+    puts "\nHit any key to see the list or type 'exit' to exit.\n"
     @input = gets.strip.downcase
   end
   
