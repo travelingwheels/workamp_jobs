@@ -7,6 +7,7 @@ class WorkampJobs::Cli
      get_jobs
      job_list
      more_info
+     go_to_site
      next_step
     end
     goodbye
@@ -48,8 +49,18 @@ class WorkampJobs::Cli
     puts "----------------------------------------------------------------------"
   end
   
+  #def go_to_site
+     #puts "Would you like to see the full post? y/n"
+     #input = gets.strip.downcase
+     #if input == 'y', 'yes'
+       #Launchy.open(url)
+       #elsif input == 'n', 'no'
+      # next_step
+     #end
+  #end
+  
   def next_step
-    puts "\nHit any key to see the list or type 'exit' to exit.\n"
+    puts "\nHit any key and enter to see the list or type 'exit' to exit.\n"
     @input = gets.strip.downcase
   end
   
