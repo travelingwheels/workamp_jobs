@@ -1,8 +1,6 @@
 # WorkampJobs
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/workamp_jobs`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to WorkampJobs! This is a simple gem to get information about workamping jobs. The information comes from the coolworks.com/jobs-with-rv-spaces. Use it when you're boondocking in a national park or remote location where internet connectivity is a problem.
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Once installed on your system, in the comandline type ./bin/jobs . You will get a list of job titles. Choose a number to see more information about that title. 
 
 ## Development
 

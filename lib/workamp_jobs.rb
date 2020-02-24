@@ -6,7 +6,6 @@ require_relative "./workamp_jobs/scraper"
 require 'pry'
 require 'nokogiri'
 require 'open-uri'
-require 'launchy'
 
 #module WorkampJobs
  # class Error < StandardError; end
