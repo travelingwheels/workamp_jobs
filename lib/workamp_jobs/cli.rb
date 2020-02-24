@@ -19,12 +19,12 @@ class WorkampJobs::Cli
     goodbye
   end
   
-  def get_jobs
+  def get_jobs  #method to get job objects from the Jobs class.
     #binding.pry
     @jobs = WorkampJobs::Jobs.all
   end
   
-  def job_list
+  def job_list  #method iterate through job objects and display the title and number each one.
     puts "\nHere is today's list of workamp jobs.\n"
     @jobs.each.with_index(1) do |job, idx|
       puts "#{idx}. #{job.title}"
@@ -33,7 +33,7 @@ class WorkampJobs::Cli
     puts "please choose a number to see more info."
   end
   
-  def more_info
+  def more_info  #method to get users input and also checks for valid input.
     input = gets.strip.to_i
     if input.between?(1,WorkampJobs::Jobs.all.length)
       job = WorkampJobs::Jobs.all[input - 1]
@@ -41,11 +41,11 @@ class WorkampJobs::Cli
     end
   end
   
-  def valid_input(input, data)
+  def valid_input(input, data)  #this method is connected to more_info to check user input.
     input.to_i <= data.length && input.to_i > 0 
   end
   
-  def display_job_details(job)
+  def display_job_details(job)  #display method.
     puts "--------------------------------------------------------------------------------"
     puts "#{@@grn}#{job.title}#{@@white}"
     puts "#{job.about}"
