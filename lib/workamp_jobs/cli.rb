@@ -1,4 +1,11 @@
 class WorkampJobs::Cli
+  
+  @@muted="\e[1;31m"
+  @@grn="\e[1;32m"
+  @@blu="\e[1;34m"
+  @@mag="\e[1;35m"
+  @@cyn="\e[1;36m"
+  @@white="\e[0m"
 
   def call
     puts "\nWelcome to Workamp jobs!\n"
@@ -7,7 +14,6 @@ class WorkampJobs::Cli
      get_jobs
      job_list
      more_info
-     go_to_site
      next_step
     end
     goodbye
@@ -25,7 +31,6 @@ class WorkampJobs::Cli
       #binding.pry
     end
     puts "please choose a number to see more info."
-    #more_info
   end
   
   def more_info
@@ -41,26 +46,16 @@ class WorkampJobs::Cli
   end
   
   def display_job_details(job)
-    puts "----------------------------------------------------------------------"
-    puts "#{job.title}"
+    puts "--------------------------------------------------------------------------------"
+    puts "#{@@grn}#{job.title}#{@@white}"
     puts "#{job.about}"
-    puts "\nlocation for job selected is #{job.location}.\n"
-    puts "\nThe job was posted on #{job.post_date}.\n"
-    puts "----------------------------------------------------------------------"
+    puts "\nlocation for job selected: #{@@cyn}#{job.location}.#{@@white}\n"
+    puts "\nThe job was posted on #{@@blu}#{job.post_date}.#{@@white}\n"
+    puts "--------------------------------------------------------------------------------"
   end
   
-  #def go_to_site
-     #puts "Would you like to see the full post? y/n"
-     #input = gets.strip.downcase
-     #if input == 'y', 'yes'
-       #Launchy.open(url)
-       #elsif input == 'n', 'no'
-      # next_step
-     #end
-  #end
-  
   def next_step
-    puts "\nHit any key and enter to see the list or type 'exit' to exit.\n"
+    puts "Hit any key and enter to see the list or type 'exit' to exit."
     @input = gets.strip.downcase
   end
   

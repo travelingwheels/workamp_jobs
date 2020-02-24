@@ -11,11 +11,8 @@ class WorkampJobs::Scraper
     location = job.css("div.location").text.strip
     post_date = job.css("span.time").text.strip
     about = job.css("div.text").text.strip
-    profile = job.css("div.top-meta h4 a").attr("href").value
-    url = "https://www.coolworks.com/jobs-with-rv-spaces#{profile}" 
-     #Launchy.open(url)
     #binding.pry
-     WorkampJobs::Jobs.new(title, location, post_date, about, url)
+     WorkampJobs::Jobs.new(title, location, post_date, about)
     end
   end
 end
