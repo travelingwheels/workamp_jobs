@@ -50,13 +50,14 @@ class WorkampJobs::Cli
     puts "#{@@grn}#{job.title}#{@@white}"
     puts "#{job.about}"
     puts "\nlocation for job selected: #{@@cyn}#{job.location}.#{@@white}\n"
-    puts "\nThe job was posted on #{@@blu}#{job.post_date}.#{@@white}\n"
+    puts "\nThe job was posted on #{@@mag}#{job.post_date}.#{@@white}\n"
     puts "--------------------------------------------------------------------------------"
-    puts "#{job.url}"
+    puts "To see the full job post click on the link"
+    puts "#{@@blu}#{job.url}#{@@white}"
   end
   
   def next_step
-    puts "\nHit any key and enter to see the list or type 'exit' to exit.\n"
+    puts "\nOr hit any key and enter to see the list or type 'exit' to exit.\n"
     @input = gets.strip.downcase
   end
   
